@@ -1,4 +1,6 @@
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +26,21 @@ public class GUI extends JFrame implements ActionListener, ItemListener, Runnabl
 		button.addActionListener(this);
 		
 		String[] fontNames = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+		
+		add(fonts = new JComboBox(fontNames));
+		
+		message = "Hello";
 	}
+	
+	public void paint(Graphics g) {
+		super.paint(g);
+		
+		String name = fonts.getSelectedItem().toString();
+		
+		Font font = new Font(name,Font.BOLD,20);
+	}
+	
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
