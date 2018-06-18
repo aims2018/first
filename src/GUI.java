@@ -38,6 +38,10 @@ public class GUI extends JFrame implements ActionListener, ItemListener, Runnabl
 		String name = fonts.getSelectedItem().toString();
 		
 		Font font = new Font(name,Font.BOLD,20);
+		
+		g.setFont(font);
+		
+		g.drawString(message,20,200);
 	}
 	
 	
